@@ -1,0 +1,36 @@
+[
+  {
+    "summary": "Ljudi u ovom chunku govore o tome kako se može skrapijati Reddit, a posebno o njihovim iskustvima i preporukama za različite metode. Neke osobe su spomenule da je moguće koristiti API-ju ili web scraper API-jeve koji podržavaju Reddit. Drugi su spomenuli da trebaš Rotating residential IPs i neku infrastrukturu ako želiš izgraditi svoj vlastiti skraper. Određene osobe su također spomenule da postoje različite API-jeve koji podržavaju Reddit, kao što je Scrapecreators ili python wrapper za Reddit API.",
+    "main_topics": [
+      "Skrapijanje Reddit",
+      "API-jevi",
+      "Web scraper API-jeve"
+    ],
+    "overall_sentiment": "neutral",
+    "opinions_for": [
+      "Koristiti API-ju ili web scraper API-jeve koji podržavaju Reddit.",
+      "Izgraditi vlastiti skraper sa Rotating residential IPs i infrastrukturom."
+    ],
+    "opinions_against": [
+      "Skrapijanje Reddit može biti bolno (ajwefomamcd48231)."
+    ],
+    "disputed_points": [
+      "Postoji sporna tačka između korištenja API-ja i web scraper API-ja koji podržavaju Reddit."
+    ],
+    "misunderstandings_or_uncertain_claims": [
+      "Neka osoba je spomenula da postoje različite API-jeve koji podržavaju Reddit, ali nije jasno koje su točne."
+    ],
+    "notable_insights": [
+      "Reddit URL-e su javni, pa bi trebalo biti moguće skrapijati ih (AgreeableBite6570)."
+    ],
+    "tone_notes": [
+      "Neki komentari imaju humoristički ton ili sarkazam."
+    ],
+    "reader_takeaway": "Ako želiš skrapijati Reddit, trebaš razmotriti korištenje API-ja ili web scraper API-ja koji podržavaju Reddit. Također, trebaš paziti na Rotating residential IPs i infrastrukturu ako želiš izgraditi vlastiti skraper.",
+    "_meta": {
+      "chunk_id": 0,
+      "comment_count": 13,
+      "token_estimate": 516
+    }
+  }
+]

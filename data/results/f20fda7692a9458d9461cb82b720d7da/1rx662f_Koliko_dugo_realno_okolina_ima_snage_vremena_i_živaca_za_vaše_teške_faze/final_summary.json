@@ -1,0 +1,47 @@
+{
+  "tldr_comment": "Ljudi su se slagali da podrška od bliskih ljudi može biti kratkotrajna, ali postoje različita mišljenja o tome kako je najbolje nositi krizu. Neki su izrazili potrebu za podršku u krizama, a neki su sugerirali da bi bilo korisno imati skupinu podrške koja nije sastavljena od njihovih prijatelja.",
+  "reader_summary": "Ljudi se slažu da podrška od bliskih ljudi može biti kratkotrajna, ali postoje različita mišljenja o tome kako je najbolje nositi krizu.",
+  "final_summary": "Rasprava se uglavnom fokusirala na problem 'friend fatigue' (zamor suosjećanja) u krizama i potrebu za podršku od bliskih ljudi. Ljudi su se slagali da podrška može biti kratkotrajna, ali postoje različita mišljenja o tome kako je najbolje nositi krizu.",
+  "main_topics": [
+    "podrška",
+    "kriza",
+    "bliski ljudi"
+  ],
+  "consensus_points": [
+    "Podrška od bliskih ljudi može biti kratkotrajna",
+    "Bi bilo korisno imati skupinu podrške koja nije sastavljena od njihovih prijatelja"
+  ],
+  "disputed_points": [
+    "Kako dugo podrška od bliskih ljudi treba trajati?",
+    "Je li bolje imati skupinu podrške koja nije sastavljena od njihovih prijatelja?"
+  ],
+  "strongest_arguments_for": [
+    "Podrška od bliskih ljudi može biti kratkotrajna"
+  ],
+  "strongest_arguments_against": [
+    "Većina ljudi obično ne zna pružiti podršku i nemaju osnovne socijalne vještine.",
+    "Neki su sugerirali da bi bilo bolje samo patiti u tišini nego uzeti podršku od drugih."
+  ],
+  "tone_overview": "Rasprava je uglavnom ozbiljna, ali postoje i humoristični komentari.",
+  "controversial_elements": [
+    "Neki su izrazili frustraciju i bespomoćnost u krizama",
+    "Neke osobe su sugerirale da bi bilo bolje samo patiti u tišini nego uzeti podršku od drugih."
+  ],
+  "misinformation_or_uncertain_claims": [
+    "Neki su izrazili potrebu za podršku u krizama, ali nisu jasno definirali šta bi trebalo biti uručeno."
+  ],
+  "practical_takeaways": [
+    "U krizama podrška od bliskih ljudi može biti kratkotrajna",
+    "Bi bilo korisno imati skupinu podrške koja nije sastavljena od njihovih prijatelja."
+  ],
+  "worth_reading_original_comments": "Ako ste zainteresirani za detalje i različita mišljenja, vredno je pročitati originalne komentare.",
+  "_meta": {
+    "model": "llama3.1:latest",
+    "post_id": "1rx662f",
+    "title": "Koliko dugo realno okolina ima snage, vremena i živaca za vaše teške faze?",
+    "generated_at": "2026-03-18 17:05:11",
+    "chunk_count": 2,
+    "comment_count": 63,
+    "post_num_comments": 66
+  }
+}

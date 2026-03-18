@@ -1,0 +1,15 @@
+{
+  "job_id": "4981c2adebbf4d939523930aaed06388",
+  "reddit_url": "https://www.reddit.com/r/SaaS/comments/1ez5z4t/how_are_people_able_to_scrape_reddit/",
+  "chat_id": 928256490,
+  "requested_by_user_id": 928256490,
+  "status": "completed",
+  "created_at": "2026-03-18T16:10:01.983982+00:00",
+  "updated_at": "2026-03-18T16:10:42.039588+00:00",
+  "result_dir": "C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\4981c2adebbf4d939523930aaed06388",
+  "error_message": null,
+  "title": null,
+  "tldr_text": "Ljudi u ovom threadu razgovaraju o skrapijanju Reddit-a, a posebno o njihovim iskustvima i preporukama za različite metode. Neke osobe su spomenule da je moguće koristiti API-ju ili web scraper API-jeve koji podržavaju Reddit, ali postoje sporne tačke između njihovog korištenja.",
+  "attempts": 1,
+  "metadata": {}
+}

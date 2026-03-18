@@ -1,0 +1,15 @@
+{
+  "job_id": "02efb71ce5394ff2837d8477424c522c",
+  "reddit_url": "https://www.reddit.com/r/webscraping/comments/1kjwz0c/opensource_reddit_scraper/",
+  "chat_id": 928256490,
+  "requested_by_user_id": 928256490,
+  "status": "completed",
+  "created_at": "2026-03-18T16:24:47.389172+00:00",
+  "updated_at": "2026-03-18T16:25:27.927474+00:00",
+  "result_dir": "C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\02efb71ce5394ff2837d8477424c522c",
+  "error_message": null,
+  "title": null,
+  "tldr_text": "Ljudi su pozitivno reagirali na projekt koji omogućava skupljanje i analizu Reddit-a pisanja, posebice zahvaljujući upotrebi GPT-4 za filtriranje i ocjenu sadržaja. Neke osobe su kritizirale terminologiju, ali većina je pozitivno reagirala na projekt.",
+  "attempts": 1,
+  "metadata": {}
+}

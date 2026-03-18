@@ -1,0 +1,15 @@
+{
+  "job_id": "3d3fe4f9499a44a18e47779189419b0f",
+  "reddit_url": "https://www.reddit.com/r/SaaS/comments/1ez5z4t/how_are_people_able_to_scrape_reddit/?share_id=b0ytzPYfzGcigEPU-HSu0&utm_content=2&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1",
+  "chat_id": 928256490,
+  "requested_by_user_id": 928256490,
+  "status": "failed",
+  "created_at": "2026-03-18T16:09:17.775583+00:00",
+  "updated_at": "2026-03-18T16:09:19.421260+00:00",
+  "result_dir": "C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\3d3fe4f9499a44a18e47779189419b0f",
+  "error_message": "Pipeline nije uspio. stderr: Greška pri dohvaćanju Reddit posta: Expecting value: line 2 column 5 (char 5)\n'utm_content' is not recognized as an internal or external command,\noperable program or batch file.\n'utm_medium' is not recognized as an internal or external command,\noperable program or batch file.\n'utm_name' is not recognized as an internal or external command,\noperable program or batch file.\n'utm_source' is not recognized as an internal or external command,\noperable program or batch file.\n'utm_term' is not recognized as an internal or external command,\noperable program or batch file.; stdout: [2026-03-18 17:09:18] Dohvaćam Reddit post i komentare...",
+  "title": null,
+  "tldr_text": null,
+  "attempts": 1,
+  "metadata": {}
+}

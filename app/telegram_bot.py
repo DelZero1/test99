@@ -10,7 +10,7 @@ from app.config import Settings
 from app.logging_utils import configure_logging
 from app.queue_store import QueueStore
 from app.security import SenderValidationError, validate_sender
-from app.url_utils import is_reddit_post_url
+from app.url_utils import InvalidRedditUrl, normalize_reddit_url
 
 
 class TelegramRedditBot:
@@ -44,18 +44,39 @@ class TelegramRedditBot:
         if message is None or not message.text:
             return
 
-        reddit_url = message.text.strip()
-        if not is_reddit_post_url(reddit_url):
+        raw_text = message.text.strip()
+
+        try:
+            normalized_url = normalize_reddit_url(raw_text)
+        except InvalidRedditUrl:
             await message.reply_text("Pošalji isključivo valjani Reddit post URL.")
+            return
+        except Exception as exc:
+            self.logger.exception("Unexpected URL normalization error: %s", exc)
+            await message.reply_text("Nisam uspio obraditi link. Pokušaj poslati puni Reddit post URL.")
             return
 
         job = self.queue_store.enqueue_job(
-            reddit_url=reddit_url,
+            reddit_url=normalized_url,
             chat_id=message.chat_id,
             user_id=user_id,
         )
-        self.logger.info("Enqueued job %s for chat %s", job.job_id, message.chat_id)
-        await message.reply_text("Zaprimio sam link. Krećem s obradom.")
+
+        self.logger.info(
+            "Enqueued job %s for chat %s | raw_url=%s | normalized_url=%s",
+            job.job_id,
+            message.chat_id,
+            raw_text,
+            normalized_url,
+        )
+
+        if raw_text != normalized_url:
+            await message.reply_text(
+                "Zaprimio sam link i normalizirao ga u valjani Reddit post URL.\n"
+                "Krećem s obradom."
+            )
+        else:
+            await message.reply_text("Zaprimio sam link. Krećem s obradom.")
 
     async def handle_status(
         self,

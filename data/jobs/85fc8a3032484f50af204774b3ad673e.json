@@ -1,0 +1,15 @@
+{
+  "job_id": "85fc8a3032484f50af204774b3ad673e",
+  "reddit_url": "https://www.reddit.com/r/webscraping/comments/1kjwz0c/opensource_reddit_scraper/",
+  "chat_id": 928256490,
+  "requested_by_user_id": 928256490,
+  "status": "completed",
+  "created_at": "2026-03-18T16:13:13.220862+00:00",
+  "updated_at": "2026-03-18T16:13:45.854359+00:00",
+  "result_dir": "C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\85fc8a3032484f50af204774b3ad673e",
+  "error_message": null,
+  "title": null,
+  "tldr_text": "Ljudi su pozitivno reagirali na projekt koji omogućava skrapping Reddit-a pomoću GPT-4, ali postoje kritike o terminologiji. Projekt je koristan za različite svrhe kao što su indie hacking i marketing, ali treba biti uzeti u obzir definicija web scrapinga i koristiti se odgovarajuće terminologije.",
+  "attempts": 1,
+  "metadata": {}
+}

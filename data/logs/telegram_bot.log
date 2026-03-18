@@ -1,0 +1,24 @@
+2026-03-18 16:42:52 | INFO | telegram_bot | Starting Telegram bot polling loop
+2026-03-18 16:42:53 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 16:42:53 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 16:42:53 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 16:42:53 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 16:42:53 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 16:42:53 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 16:42:53 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 16:42:54 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 16:44:42 | INFO | telegram_bot | Enqueued job ddc155e05513430eadd48e048baf1d9a for chat 928256490
+2026-03-18 16:47:42 | INFO | telegram_bot | Enqueued job 182076c618df4287a462a6431d9a40e8 for chat 928256490
+2026-03-18 16:50:23 | INFO | telegram_bot | Enqueued job d8c81e4f30c747729374a34c21fe43bd for chat 928256490
+2026-03-18 16:51:49 | INFO | telegram_bot | Enqueued job 24d592e5d0ea496e8ba2b72a785303f2 for chat 928256490
+2026-03-18 16:53:53 | INFO | telegram_bot | Enqueued job 0c38b746eb004e44a3bc1af8bd23d1d6 for chat 928256490
+2026-03-18 16:54:43 | INFO | telegram_bot | Enqueued job 4a52bb17ebab49f28afe82d039813209 for chat 928256490
+2026-03-18 16:56:04 | INFO | telegram_bot | Enqueued job cdac4d0850414e8dac776cb3b1c197b7 for chat 928256490
+2026-03-18 17:01:28 | INFO | telegram_bot | Enqueued job 21e84ae0f2584884823129e4c8e389c1 for chat 928256490
+2026-03-18 17:04:22 | INFO | telegram_bot | Enqueued job f20fda7692a9458d9461cb82b720d7da for chat 928256490
+2026-03-18 17:05:09 | WARNING | telegram_bot | Ignoring message from unauthorized user
+2026-03-18 17:09:17 | INFO | telegram_bot | Enqueued job 3d3fe4f9499a44a18e47779189419b0f for chat 928256490
+2026-03-18 17:10:01 | INFO | telegram_bot | Enqueued job 4981c2adebbf4d939523930aaed06388 for chat 928256490
+2026-03-18 17:13:13 | INFO | telegram_bot | Enqueued job 85fc8a3032484f50af204774b3ad673e for chat 928256490
+2026-03-18 17:24:03 | INFO | telegram_bot | Starting Telegram bot polling loop
+2026-03-18 17:24:47 | INFO | telegram_bot | Enqueued job 02efb71ce5394ff2837d8477424c522c for chat 928256490 | raw_url=https://www.reddit.com/r/webscraping/s/iy3dPiOr6Z | normalized_url=https://www.reddit.com/r/webscraping/comments/1kjwz0c/opensource_reddit_scraper/

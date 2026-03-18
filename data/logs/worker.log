@@ -1,0 +1,151 @@
+2026-03-18 16:44:16 | INFO | worker | Starting worker loop
+2026-03-18 16:44:43 | INFO | worker | Processing job ddc155e05513430eadd48e048baf1d9a
+2026-03-18 16:44:43 | ERROR | worker | Job ddc155e05513430eadd48e048baf1d9a failed: Nedostaje integracija pipelinea. Postavi REDDIT_PIPELINE_COMMAND ili REDDIT_PIPELINE_CALLABLE.
+Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\app\worker.py", line 36, in process_job
+    self.pipeline.run(job.reddit_url, job.job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 27, in run
+    raise PipelineExecutionError(
+app.reddit_pipeline.PipelineExecutionError: Nedostaje integracija pipelinea. Postavi REDDIT_PIPELINE_COMMAND ili REDDIT_PIPELINE_CALLABLE.
+2026-03-18 16:47:32 | INFO | worker | Starting worker loop
+2026-03-18 16:47:44 | INFO | worker | Processing job 182076c618df4287a462a6431d9a40e8
+2026-03-18 16:47:44 | ERROR | worker | Job 182076c618df4287a462a6431d9a40e8 failed: Pipeline nije uspio. stderr: Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\crawl\reddit_ollama_summarizer.py", line 14, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'; stdout: -
+Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\app\worker.py", line 36, in process_job
+    self.pipeline.run(job.reddit_url, job.job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 25, in run
+    self._run_command(reddit_url, job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 49, in _run_command
+    raise PipelineExecutionError(
+app.reddit_pipeline.PipelineExecutionError: Pipeline nije uspio. stderr: Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\crawl\reddit_ollama_summarizer.py", line 14, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'; stdout: -
+2026-03-18 16:50:13 | INFO | worker | Starting worker loop
+2026-03-18 16:50:25 | INFO | worker | Processing job d8c81e4f30c747729374a34c21fe43bd
+2026-03-18 16:50:25 | ERROR | worker | Job d8c81e4f30c747729374a34c21fe43bd failed: Pipeline nije uspio. stderr: Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\crawl\reddit_ollama_summarizer.py", line 14, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'; stdout: -
+Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\app\worker.py", line 36, in process_job
+    self.pipeline.run(job.reddit_url, job.job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 25, in run
+    self._run_command(reddit_url, job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 49, in _run_command
+    raise PipelineExecutionError(
+app.reddit_pipeline.PipelineExecutionError: Pipeline nije uspio. stderr: Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\crawl\reddit_ollama_summarizer.py", line 14, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'; stdout: -
+2026-03-18 16:51:43 | INFO | worker | Starting worker loop
+2026-03-18 16:51:52 | INFO | worker | Processing job 24d592e5d0ea496e8ba2b72a785303f2
+2026-03-18 16:51:52 | ERROR | worker | Job 24d592e5d0ea496e8ba2b72a785303f2 failed: Nedostaje integracija pipelinea. Postavi REDDIT_PIPELINE_COMMAND ili REDDIT_PIPELINE_CALLABLE.
+Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\app\worker.py", line 36, in process_job
+    self.pipeline.run(job.reddit_url, job.job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 27, in run
+    raise PipelineExecutionError(
+app.reddit_pipeline.PipelineExecutionError: Nedostaje integracija pipelinea. Postavi REDDIT_PIPELINE_COMMAND ili REDDIT_PIPELINE_CALLABLE.
+2026-03-18 16:53:48 | INFO | worker | Starting worker loop
+2026-03-18 16:53:54 | INFO | worker | Processing job 0c38b746eb004e44a3bc1af8bd23d1d6
+2026-03-18 16:53:54 | ERROR | worker | Job 0c38b746eb004e44a3bc1af8bd23d1d6 failed: Nedostaje integracija pipelinea. Postavi REDDIT_PIPELINE_COMMAND ili REDDIT_PIPELINE_CALLABLE.
+Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\app\worker.py", line 36, in process_job
+    self.pipeline.run(job.reddit_url, job.job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 27, in run
+    raise PipelineExecutionError(
+app.reddit_pipeline.PipelineExecutionError: Nedostaje integracija pipelinea. Postavi REDDIT_PIPELINE_COMMAND ili REDDIT_PIPELINE_CALLABLE.
+2026-03-18 16:54:36 | INFO | worker | Starting worker loop
+2026-03-18 16:54:45 | INFO | worker | Processing job 4a52bb17ebab49f28afe82d039813209
+2026-03-18 16:54:45 | ERROR | worker | Job 4a52bb17ebab49f28afe82d039813209 failed: Pipeline nije uspio. stderr: Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\reddit_ollama_summarizer.py", line 14, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'; stdout: -
+Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\app\worker.py", line 36, in process_job
+    self.pipeline.run(job.reddit_url, job.job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 25, in run
+    self._run_command(reddit_url, job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 49, in _run_command
+    raise PipelineExecutionError(
+app.reddit_pipeline.PipelineExecutionError: Pipeline nije uspio. stderr: Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\reddit_ollama_summarizer.py", line 14, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'; stdout: -
+2026-03-18 16:55:58 | INFO | worker | Starting worker loop
+2026-03-18 16:56:07 | INFO | worker | Processing job cdac4d0850414e8dac776cb3b1c197b7
+2026-03-18 16:56:07 | ERROR | worker | Job cdac4d0850414e8dac776cb3b1c197b7 failed: Pipeline nije uspio. stderr: Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\reddit_ollama_summarizer.py", line 857, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\krist\Desktop\mrx\test99\reddit_ollama_summarizer.py", line 696, in main
+    ensure_dir(out_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\reddit_ollama_summarizer.py", line 26, in ensure_dir
+    path.mkdir(parents=True, exist_ok=True)
+  File "C:\Users\krist\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: "'C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\cdac4d0850414e8dac776cb3b1c197b7'"; stdout: -
+Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\app\worker.py", line 36, in process_job
+    self.pipeline.run(job.reddit_url, job.job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 25, in run
+    self._run_command(reddit_url, job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 49, in _run_command
+    raise PipelineExecutionError(
+app.reddit_pipeline.PipelineExecutionError: Pipeline nije uspio. stderr: Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\reddit_ollama_summarizer.py", line 857, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\krist\Desktop\mrx\test99\reddit_ollama_summarizer.py", line 696, in main
+    ensure_dir(out_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\reddit_ollama_summarizer.py", line 26, in ensure_dir
+    path.mkdir(parents=True, exist_ok=True)
+  File "C:\Users\krist\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: "'C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\cdac4d0850414e8dac776cb3b1c197b7'"; stdout: -
+2026-03-18 17:01:21 | INFO | worker | Starting worker loop
+2026-03-18 17:01:30 | INFO | worker | Processing job 21e84ae0f2584884823129e4c8e389c1
+2026-03-18 17:02:04 | INFO | worker | Completed job 21e84ae0f2584884823129e4c8e389c1
+2026-03-18 17:04:23 | INFO | worker | Processing job f20fda7692a9458d9461cb82b720d7da
+2026-03-18 17:05:11 | INFO | worker | Completed job f20fda7692a9458d9461cb82b720d7da
+2026-03-18 17:09:18 | INFO | worker | Processing job 3d3fe4f9499a44a18e47779189419b0f
+2026-03-18 17:09:19 | ERROR | worker | Job 3d3fe4f9499a44a18e47779189419b0f failed: Pipeline nije uspio. stderr: Greška pri dohvaćanju Reddit posta: Expecting value: line 2 column 5 (char 5)
+'utm_content' is not recognized as an internal or external command,
+operable program or batch file.
+'utm_medium' is not recognized as an internal or external command,
+operable program or batch file.
+'utm_name' is not recognized as an internal or external command,
+operable program or batch file.
+'utm_source' is not recognized as an internal or external command,
+operable program or batch file.
+'utm_term' is not recognized as an internal or external command,
+operable program or batch file.; stdout: [2026-03-18 17:09:18] Dohvaćam Reddit post i komentare...
+Traceback (most recent call last):
+  File "C:\Users\krist\Desktop\mrx\test99\app\worker.py", line 36, in process_job
+    self.pipeline.run(job.reddit_url, job.job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 24, in run
+    self._run_command(reddit_url, job_id, result_dir)
+  File "C:\Users\krist\Desktop\mrx\test99\app\reddit_pipeline.py", line 51, in _run_command
+    raise PipelineExecutionError(
+app.reddit_pipeline.PipelineExecutionError: Pipeline nije uspio. stderr: Greška pri dohvaćanju Reddit posta: Expecting value: line 2 column 5 (char 5)
+'utm_content' is not recognized as an internal or external command,
+operable program or batch file.
+'utm_medium' is not recognized as an internal or external command,
+operable program or batch file.
+'utm_name' is not recognized as an internal or external command,
+operable program or batch file.
+'utm_source' is not recognized as an internal or external command,
+operable program or batch file.
+'utm_term' is not recognized as an internal or external command,
+operable program or batch file.; stdout: [2026-03-18 17:09:18] Dohvaćam Reddit post i komentare...
+2026-03-18 17:10:02 | INFO | worker | Processing job 4981c2adebbf4d939523930aaed06388
+2026-03-18 17:10:42 | INFO | worker | Completed job 4981c2adebbf4d939523930aaed06388
+2026-03-18 17:13:15 | INFO | worker | Processing job 85fc8a3032484f50af204774b3ad673e
+2026-03-18 17:13:46 | INFO | worker | Completed job 85fc8a3032484f50af204774b3ad673e
+2026-03-18 17:24:16 | INFO | worker | Starting worker loop
+2026-03-18 17:24:49 | INFO | worker | Processing job 02efb71ce5394ff2837d8477424c522c
+2026-03-18 17:25:28 | INFO | worker | Completed job 02efb71ce5394ff2837d8477424c522c
