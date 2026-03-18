@@ -25,14 +25,13 @@
 - Updated Telegram bot to normalize URLs before enqueueing jobs
 - Moved `reddit_ollama_summarizer.py` into the repository root for direct local integration
 - Confirmed bot and worker now run and process jobs locally
+- Added local English/Croatian output-language detection in `reddit_ollama_summarizer.py`
+- Expanded chunk, merge, and final TL;DR prompts to produce more detailed and language-aware summaries
+- Added `output_language` metadata to summarizer outputs and surfaced it in the markdown report
 
 ## Files recently changed
-- `app/config.py`
-- `app/reddit_pipeline.py`
-- `app/url_utils.py`
-- `app/telegram_bot.py`
 - `reddit_ollama_summarizer.py`
-- `.env`
+- `CHECKPOINT.md`
 - `README.md`
 
 ## Important current assumptions
@@ -41,19 +40,21 @@
 - The worker is intended to call the local root-level `reddit_ollama_summarizer.py`
 - The project is Windows-first in actual usage
 - Reddit share links from the mobile app should be normalized before job creation
+- Summarizer language selection is intentionally simple and local-only, returning either `en` or `hr`
 
 ## Known issues
 - Need to verify result discovery remains reliable for all summarizer outputs
 - README still needs polishing for Windows-specific setup and examples
 - Very large Reddit threads may still yield partial scraping depending on public Reddit behavior
 - Daily discussion / megathread summaries are lower quality than standard single-topic posts
+- The language detector is heuristic-based and may misclassify heavily mixed-language threads or jargon-heavy posts
 
 ## Next recommended steps
-1. Improve worker result discovery if needed
-2. Add tests for URL normalization
+1. Run live English and Croatian summarizer smoke tests against Ollama and review output quality
+2. Add focused tests for language detection and prompt-building behavior
 3. Improve README for Windows usage
 4. Add resilience checks around pipeline output lookup
-5. Optionally add a more explicit checkpoint/update workflow for Codex
+5. Review megathread handling after prompt changes
 
 ## Change log
 ### 2026-03-18
@@ -62,3 +63,26 @@
 - Integrated root-level `reddit_ollama_summarizer.py`
 - Added Reddit URL normalization for share links and tracking-parameter links
 - Updated Telegram bot intake to store canonical Reddit URLs
+- Refreshed repository state review against current source tree and recent git history
+- Added heuristic `detect_output_language()` support for English/Croatian summaries
+- Updated chunk, merge, and TL;DR prompts to request more detailed, less generic output in the detected language
+- Added `output_language` to final summary metadata and markdown reporting
+
+## Latest checkpoint update
+- Timestamp: 2026-03-18 16:43:18 UTC
+- What changed:
+  - Implemented local language detection using the post title, post body, and sampled comments
+  - Reused detected language across chunk prompts, final merge prompt, and final TL;DR pass
+  - Made the generated TL;DR/reader summary/final analysis prompts substantially more detailed and reader-facing
+  - Added output language metadata to JSON output and markdown report context
+- Files changed:
+  - `reddit_ollama_summarizer.py`
+  - `CHECKPOINT.md`
+- Why the change was made:
+  - To improve TL;DR usefulness while preserving the existing bot/worker/local summarizer architecture
+  - To keep English threads summarized in English and Croatian threads summarized in Croatian
+- Current known issues:
+  - Live Ollama output quality still depends on the installed local model
+  - Heuristic language detection may need tuning for mixed-language or very short posts
+- Next recommended step:
+  - Run end-to-end summaries on one English and one Croatian Reddit thread and review whether the new prompts produce the desired detail level
