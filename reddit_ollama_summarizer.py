@@ -63,6 +63,68 @@ def split_batches(items: List[str], size: int) -> List[List[str]]:
     return [items[i:i + size] for i in range(0, len(items), size)]
 
 
+def collect_language_sample(post: Dict[str, Any], comments: List[Dict[str, Any]], max_comments: int = 20) -> str:
+    parts: List[str] = []
+
+    for value in (post.get("title"), post.get("selftext")):
+        cleaned = clean_text(value)
+        if cleaned:
+            parts.append(cleaned)
+
+    for comment in comments[:max_comments]:
+        cleaned = clean_text(comment.get("body"))
+        if cleaned:
+            parts.append(cleaned)
+
+    return " ".join(parts)
+
+
+def detect_output_language(post: Dict[str, Any], comments: List[Dict[str, Any]], max_comments: int = 20) -> str:
+    sample_text = collect_language_sample(post, comments, max_comments=max_comments).lower()
+    if not sample_text:
+        return "en"
+
+    croatian_markers = {
+        " je ", " nije ", " sam ", " ovo ", " to ", " kao ", " što ", " ima ", " nema ",
+        " može ", " mogu ", " ćemo ", " ćete ", " ako ", " ali ", " jer ", " koji ", " koja ",
+        " koje ", " ljudi ", " netko ", " nešto ", " zašto ", " kako ", " gdje ", " ovdje ",
+        " uvijek ", " nikad ", " baš ", " previše ", " tijekom ", " između ",
+    }
+    english_markers = {
+        " the ", " and ", " that ", " this ", " with ", " people ", " because ", " about ",
+        " would ", " could ", " should ", " there ", " their ", " thread ", " comments ",
+        " really ", " think ", " maybe ", " still ", " more ", " less ", " what ", " when ",
+        " where ", " why ", " how ",
+    }
+
+    hr_score = 0
+    en_score = 0
+
+    hr_score += sum(sample_text.count(marker) for marker in croatian_markers)
+    en_score += sum(sample_text.count(marker) for marker in english_markers)
+
+    hr_score += sum(sample_text.count(char) for char in "čćžšđ")
+    en_score += sample_text.count(" the ")
+
+    return "hr" if hr_score > en_score else "en"
+
+
+def describe_output_language(output_language: str) -> str:
+    return "Croatian" if output_language == "hr" else "English"
+
+
+def build_language_instruction(output_language: str) -> str:
+    if output_language == "hr":
+        return (
+            "Piši na hrvatskom. Koristi prirodan, jasan i razgovoran hrvatski bez engleskih "
+            "fraza osim ako su nužne zbog originalnih pojmova iz threada."
+        )
+    return (
+        "Write in English. Use natural, clear, reader-friendly English and avoid switching "
+        "into Croatian unless quoting an original phrase."
+    )
+
+
 # -----------------------------
 # Reddit fetch + extract
 # -----------------------------
@@ -468,25 +530,28 @@ def call_ollama(
 # Prompts
 # -----------------------------
 
-def build_chunk_prompt(post: Dict[str, Any], chunk_text: str) -> str:
+def build_chunk_prompt(post: Dict[str, Any], chunk_text: str, output_language: str) -> str:
     title = post.get("title", "")
     subreddit = post.get("subreddit", "")
     selftext = post.get("selftext", "")
+    language_instruction = build_language_instruction(output_language)
 
     return f"""
-Ti analiziraš chunk Reddit komentara i moraš vratiti ISKLJUČIVO valjan JSON objekt.
+You are analyzing one chunk of Reddit comments and must return ONLY a valid JSON object.
 
-Kontekst posta:
-- naslov: {title}
+Post context:
+- title: {title}
 - subreddit: {subreddit}
-- tekst posta: {selftext}
+- post text: {selftext}
+- required output language: {describe_output_language(output_language)} ({output_language})
 
-Cilj:
-Sažmi što ljudi u ovom chunku stvarno govore, kako reagiraju i oko čega se slažu ili prepiru.
+Goal:
+Summarize what people in this chunk are actually saying, how they react, what specific examples they bring up,
+where they agree, and where they start pushing back or arguing.
 
-Vrati JSON sa sljedećim ključevima:
+Return JSON with these keys:
 {{
-  "summary": "Konkretan sažetak ovog chunka u 3-6 rečenica.",
+  "summary": "Concrete summary of this chunk in 4-7 sentences.",
   "main_topics": ["string"],
   "overall_sentiment": "positive|negative|mixed|neutral",
   "opinions_for": ["string"],
@@ -498,47 +563,56 @@ Vrati JSON sa sljedećim ključevima:
   "reader_takeaway": "Što bi netko trebao znati ako ne želi čitati ovaj chunk."
 }}
 
-Upute za stil:
-- fokus na stvarni sadržaj komentara
-- ne ponavljaj isto drugim riječima
-- izdvoji ono što je stvarno dominantno u raspravi
-- ako chunk ode off-topic, navedi to
-- ako ima humora, sarkazma, prepucavanja ili ideološkog sukoba, zabilježi to kratko i jasno
+Style instructions:
+- {language_instruction}
+- focus on what commenters actually claim, describe, recommend, or criticize
+- be concrete instead of generic
+- do not repeat the same point with different wording
+- mention if the chunk becomes noisy, repetitive, sarcastic, emotional, or off-topic
+- if there are useful examples, patterns, or recurring anecdotes, mention them briefly
+- keep the wording compact, but make the summary meaningfully informative
 
-Komentari:
+Comments:
 {chunk_text}
 """.strip()
 
 
-def build_final_merge_prompt(post: Dict[str, Any], chunk_summaries: List[Dict[str, Any]]) -> str:
+def build_final_merge_prompt(
+    post: Dict[str, Any],
+    chunk_summaries: List[Dict[str, Any]],
+    output_language: str
+) -> str:
     title = post.get("title", "")
     subreddit = post.get("subreddit", "")
     selftext = post.get("selftext", "")
+    language_instruction = build_language_instruction(output_language)
 
     summaries_json = json.dumps(chunk_summaries, ensure_ascii=False, indent=2)
 
     return f"""
-Ti spajaš više sažetaka chunkova iste Reddit rasprave.
+You are merging multiple chunk summaries from the same Reddit discussion.
 
-Kontekst:
-- naslov posta: {title}
+Context:
+- post title: {title}
 - subreddit: {subreddit}
-- tekst posta: {selftext}
+- post text: {selftext}
+- required output language: {describe_output_language(output_language)} ({output_language})
 
-Cilj:
-Napravi završni sažetak koji je stvarno koristan osobi koja NE želi čitati sve komentare redom.
-Želimo dobiti jedan prirodan, jasan i informativan TL;DR komentar koji prenosi:
-- opći dojam komentara
-- glavne teme
-- gdje se ljudi slažu
-- gdje nastaju rasprave ili sukobi mišljenja
-- što je najbitnije za znati prije čitanja originalnog threada
+Goal:
+Create a final summary that is genuinely useful to someone who does NOT want to read the full thread.
+The output should explain:
+- what people are mostly talking about
+- where commenters broadly agree
+- where they disagree or split into camps
+- which arguments, examples, or complaints show up most often
+- whether the thread becomes noisy, repetitive, sarcastic, emotional, ideological, or off-topic
+- what is actually worth knowing before opening the original comments
 
-Vrati ISKLJUČIVO jedan JSON objekt sa sljedećim ključevima:
+Return ONLY one JSON object with these keys:
 {{
-  "tldr_comment": "Jedan prirodan i čitljiv sažetak komentara, 5-10 rečenica, kao koristan komentar za čitatelja.",
-  "reader_summary": "Kratak sažetak u 2-3 rečenice.",
-  "final_summary": "Širi analitički sažetak rasprave.",
+  "tldr_comment": "A natural, detailed reader-facing summary in 8-14 sentences.",
+  "reader_summary": "A shorter summary in 3-5 sentences.",
+  "final_summary": "A broader analytical summary of the discussion.",
   "main_topics": ["string"],
   "consensus_points": ["string"],
   "disputed_points": ["string"],
@@ -551,44 +625,51 @@ Vrati ISKLJUČIVO jedan JSON objekt sa sljedećim ključevima:
   "worth_reading_original_comments": "string"
 }}
 
-Upute za stil:
-- piši konkretno, ne generički
-- nemoj samo nabrajati
-- nemoj izmišljati detalje koji nisu prisutni u sažecima
-- ako komentari skreću s teme, to jasno reci
-- ako se thread pretvara u ideološko prepucavanje, reci to sažeto i neutralno
-- tldr_comment mora zvučati kao nešto što bi čovjek stvarno htio pročitati umjesto cijelog threada
+Style instructions:
+- {language_instruction}
+- be concrete, specific, and useful rather than generic
+- do not invent details that are not supported by the chunk summaries
+- do not just list points; connect them into a readable explanation
+- explain what dominates the thread, not only the original post
+- note if sarcasm, emotional venting, repeated jokes, side arguments, or off-topic chains dilute the value
+- keep final_summary analytical and synthesis-oriented
+- make tldr_comment sound like something a human would genuinely want to read instead of the whole thread
 
-Chunk sažeci:
+Chunk summaries:
 {summaries_json}
 """.strip()
 
 
-def build_tldr_comment_prompt(post: Dict[str, Any], final_summary: Dict[str, Any]) -> str:
+def build_tldr_comment_prompt(post: Dict[str, Any], final_summary: Dict[str, Any], output_language: str) -> str:
+    language_instruction = build_language_instruction(output_language)
+
     return f"""
-Na temelju ove analize Reddit komentara napiši jedan koristan TL;DR komentar za osobu
-koja ne želi čitati cijeli thread.
+Based on this Reddit comment analysis, write a final reader-facing TL;DR for someone
+who does not want to read the whole thread.
 
 Post:
-- naslov: {post.get("title", "")}
+- title: {post.get("title", "")}
 - subreddit: {post.get("subreddit", "")}
-- tekst posta: {post.get("selftext", "")}
+- post text: {post.get("selftext", "")}
+- required output language: {describe_output_language(output_language)} ({output_language})
 
-Analiza:
+Analysis:
 {json.dumps(final_summary, ensure_ascii=False, indent=2)}
 
-Vrati ISKLJUČIVO JSON:
+Return ONLY JSON:
 {{
-  "tldr_comment": "Jedan prirodan komentar od 4-8 rečenica.",
-  "reader_summary": "Kratak sažetak u 2-3 rečenice."
+  "tldr_comment": "A natural, polished TL;DR in 8-12 sentences.",
+  "reader_summary": "A shorter reader summary in 3-5 sentences."
 }}
 
-Upute:
-- neka zvuči prirodno
-- neka bude informativno
-- nemoj biti previše formalan
-- reci gdje je stvarna vrijednost komentara, a gdje thread skreće u raspravu
-- nemoj prepisivati analitičke točke kao bullet listu
+Instructions:
+- {language_instruction}
+- make it sound natural, readable, and non-robotic
+- keep it informative and specific
+- avoid overly formal language
+- explain where the comments are genuinely useful and where the thread loses focus
+- do not rewrite the analysis as a bullet list
+- keep the wording smooth and reader-facing
 """.strip()
 
 
@@ -611,6 +692,7 @@ def build_markdown_report(
     lines.append(f"**Score:** {post.get('score', '')}")
     lines.append(f"**Broj komentara po postu:** {post.get('num_comments', '')}")
     lines.append(f"**Komentara dohvaćeno:** {final_summary.get('_meta', {}).get('comment_count', '')}")
+    lines.append(f"**Output language:** {final_summary.get('_meta', {}).get('output_language', '')}")
     lines.append(f"**URL:** {post.get('url', '')}")
     lines.append("")
 
@@ -704,6 +786,8 @@ def main() -> int:
 
     post = result["post"]
     comments = sort_comments_for_analysis(result["comments"])
+    output_language = detect_output_language(post, comments)
+    post["language_guess"] = output_language
 
     slug = safe_filename(post.get("title", "reddit_post"))
     post_dir = out_dir / f"{post.get('post_id', 'unknown')}_{slug}"
@@ -748,7 +832,7 @@ def main() -> int:
         chunk_id = chunk["chunk_id"]
         print(f"[{now_ts()}] Chunk {chunk_id + 1}/{len(chunks)}")
 
-        prompt = build_chunk_prompt(post, chunk["text"])
+        prompt = build_chunk_prompt(post, chunk["text"], output_language)
 
         try:
             response_text = call_ollama(
@@ -783,7 +867,7 @@ def main() -> int:
     save_json(post_dir / "chunk_summaries.json", chunk_summaries)
 
     print(f"[{now_ts()}] Radim final merge preko Ollame...")
-    final_prompt = build_final_merge_prompt(post, chunk_summaries)
+    final_prompt = build_final_merge_prompt(post, chunk_summaries, output_language)
 
     try:
         final_response_text = call_ollama(
@@ -813,7 +897,7 @@ def main() -> int:
 
     if not args.skip_tldr_pass:
         print(f"[{now_ts()}] Radim dodatni TL;DR pass...")
-        tldr_prompt = build_tldr_comment_prompt(post, final_summary)
+        tldr_prompt = build_tldr_comment_prompt(post, final_summary, output_language)
         try:
             tldr_response_text = call_ollama(
                 prompt=tldr_prompt,
@@ -839,6 +923,7 @@ def main() -> int:
         "chunk_count": len(chunks),
         "comment_count": len(comments),
         "post_num_comments": post.get("num_comments", 0),
+        "output_language": output_language,
     }
 
     save_json(post_dir / "final_summary.json", final_summary)
