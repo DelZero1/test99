@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import importlib
-import shlex
 import subprocess
 from pathlib import Path
 from typing import Any, Callable
@@ -30,13 +29,15 @@ class RedditPipeline:
 
     def _run_command(self, reddit_url: str, job_id: str, result_dir: Path) -> None:
         assert self.settings.pipeline_command is not None
+
         command = self.settings.pipeline_command.format(
             reddit_url=reddit_url,
             url=reddit_url,
             job_id=job_id,
-            output_dir=shlex.quote(str(result_dir)),
-            result_dir=shlex.quote(str(result_dir)),
+            output_dir=str(result_dir),
+            result_dir=str(result_dir),
         )
+
         completed = subprocess.run(
             command,
             shell=True,
@@ -45,6 +46,7 @@ class RedditPipeline:
             capture_output=True,
             text=True,
         )
+
         if completed.returncode != 0:
             raise PipelineExecutionError(
                 "Pipeline nije uspio. "

@@ -1,0 +1,15 @@
+{
+  "job_id": "0c38b746eb004e44a3bc1af8bd23d1d6",
+  "reddit_url": "https://www.reddit.com/r/askCroatians/comments/1rx71v4/imate_li_neke_cudne_navike_koje_radite/",
+  "chat_id": 928256490,
+  "requested_by_user_id": 928256490,
+  "status": "failed",
+  "created_at": "2026-03-18T15:53:53.612533+00:00",
+  "updated_at": "2026-03-18T15:53:54.289001+00:00",
+  "result_dir": "C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\0c38b746eb004e44a3bc1af8bd23d1d6",
+  "error_message": "Nedostaje integracija pipelinea. Postavi REDDIT_PIPELINE_COMMAND ili REDDIT_PIPELINE_CALLABLE.",
+  "title": null,
+  "tldr_text": null,
+  "attempts": 1,
+  "metadata": {}
+}

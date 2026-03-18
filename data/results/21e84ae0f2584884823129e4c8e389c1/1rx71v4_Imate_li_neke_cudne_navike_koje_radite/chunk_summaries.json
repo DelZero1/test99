@@ -1,0 +1,39 @@
+[
+  {
+    "summary": "Ljudi u ovom chunku komentara govore o raznim nekonvencionalnim navicama koje imaju, kao što su bezobrazluka prema konobaricama ili masturbacija prije izlaska iz kuće. Neke osobe smatraju da je to normalno ili čak zabavno, dok druge osobe smatraju da je to nešto što treba biti spremano ili da nije u redu. Postoji i nekoliko komentara koji se fokusiraju na humor ili sarkazam.",
+    "main_topics": [
+      "nekonvencionalne navike",
+      "bezobrazluka",
+      "masturbacija"
+    ],
+    "overall_sentiment": "mixed",
+    "opinions_for": [
+      "normalnost nekonvencionalnih navika",
+      "humor u komentarima"
+    ],
+    "opinions_against": [
+      "nešto što treba biti spremano ili nije u redu",
+      "bezobrazluka kao problem"
+    ],
+    "disputed_points": [
+      "razlika između normalnosti i nekonvencionalnosti",
+      "interpretacija smisla komentara"
+    ],
+    "misunderstandings_or_uncertain_claims": [
+      "neki komentari su teško razumljivi ili imaju dvojbe u njima"
+    ],
+    "notable_insights": [
+      "ljudi imaju različite osobine i navike",
+      "komunikacija je važna za razumevanje drugih"
+    ],
+    "tone_notes": [
+      "humor, sarkazam, zabava"
+    ],
+    "reader_takeaway": "Ljudi imaju različite osobine i navike, a komunikacija je važna za razumevanje drugih.",
+    "_meta": {
+      "chunk_id": 0,
+      "comment_count": 21,
+      "token_estimate": 293
+    }
+  }
+]

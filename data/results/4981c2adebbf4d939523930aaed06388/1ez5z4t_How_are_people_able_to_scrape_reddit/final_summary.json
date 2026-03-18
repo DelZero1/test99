@@ -1,0 +1,42 @@
+{
+  "tldr_comment": "Ljudi u ovom threadu razgovaraju o skrapijanju Reddit-a, a posebno o njihovim iskustvima i preporukama za različite metode. Neke osobe su spomenule da je moguće koristiti API-ju ili web scraper API-jeve koji podržavaju Reddit, ali postoje sporne tačke između njihovog korištenja.",
+  "reader_summary": "Thread se uglavnom fokusira na različite metode skrapijanja Reddit-a, kao što su koristiti API-ju ili web scraper API-jeve koji podržavaju Reddit. Međutim, postoje sporne tačke između njihovog korištenja i potrebe za Rotating residential IPs i infrastrukturom.",
+  "final_summary": "Thread se uglavnom fokusira na različite metode skrapijanja Reddit-a, kao što su koristiti API-ju ili web scraper API-jeve koji podržavaju Reddit. Postoji sporna tačka između njihovog korištenja i potrebe za Rotating residential IPs i infrastrukturom.",
+  "main_topics": [
+    "Skrapijanje Reddit",
+    "API-jevi",
+    "Web scraper API-jeve"
+  ],
+  "consensus_points": [
+    "Koristiti API-ju ili web scraper API-jeve koji podržavaju Reddit."
+  ],
+  "disputed_points": [
+    "Postoji sporna tačka između korištenja API-ja i web scraper API-ja koji podržavaju Reddit."
+  ],
+  "strongest_arguments_for": [
+    "Koristiti API-ju ili web scraper API-jeve koji podržavaju Reddit, jer su javni URL-e Reddit-a."
+  ],
+  "strongest_arguments_against": [
+    "Skrapijanje Reddit može biti bolno (ajwefomamcd48231)."
+  ],
+  "tone_overview": "Thread ima neutralan ton, ali postoje komentari sa humorističkim tonom ili sarkazmom.",
+  "controversial_elements": [
+    "Sporna tačka između korištenja API-ja i web scraper API-ja koji podržavaju Reddit."
+  ],
+  "misinformation_or_uncertain_claims": [
+    "Neka osoba je spomenula da postoje različite API-jeve koji podržavaju Reddit, ali nije jasno koje su točne."
+  ],
+  "practical_takeaways": [
+    "Ako želiš skrapijati Reddit, trebaš razmotriti korištenje API-ja ili web scraper API-ja koji podržavaju Reddit. Također, trebaš paziti na Rotating residential IPs i infrastrukturu ako želiš izgraditi vlastiti skraper."
+  ],
+  "worth_reading_original_comments": "Thread sadrži korisne informacije o različitim metodama skrapijanja Reddit-a, ali nije potrebno čitati sve komentare da bi se dobio glavni stav.",
+  "_meta": {
+    "model": "llama3.1:latest",
+    "post_id": "1ez5z4t",
+    "title": "How are people able to scrape reddit?",
+    "generated_at": "2026-03-18 17:10:42",
+    "chunk_count": 1,
+    "comment_count": 13,
+    "post_num_comments": 25
+  }
+}

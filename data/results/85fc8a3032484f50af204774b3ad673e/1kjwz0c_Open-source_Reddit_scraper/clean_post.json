@@ -1,0 +1,29 @@
+{
+  "post_id": "1kjwz0c",
+  "thing_id": "t3_1kjwz0c",
+  "title": "Open-source Reddit scraper",
+  "selftext": "Hey folks! I built a Reddit scraper that goes beyond just pulling posts. It uses GPT-4 to: * Filter and score posts based on pain points, emotions, and lead signals * Tag and categorize posts for product validation or marketing * Store everything locally with tagging weights and daily sorting I use it to uncover niche problems people are discussing on Reddit — super useful for indie hacking, building tools, or marketing. 🔗 GitHub: https://github.com/Mohamedsaleh14/Reddit_Scrapper 🎥 Video tutorial (step-by-step): https://youtu.be/UeMfjuDnE_0 Feedback and questions welcome! I’m planning to evolve it into something much bigger in the future 🚀",
+  "author": "mohamed__saleh",
+  "subreddit": "webscraping",
+  "subreddit_name_prefixed": "r/webscraping",
+  "score": 85,
+  "upvote_ratio": 0.86,
+  "num_comments": 27,
+  "created_utc": 1746955276.0,
+  "permalink": "/r/webscraping/comments/1kjwz0c/opensource_reddit_scraper/",
+  "url": "https://www.reddit.com/r/webscraping/comments/1kjwz0c/opensource_reddit_scraper/",
+  "domain": "self.webscraping",
+  "post_hint": "self",
+  "post_flair_text": null,
+  "is_gallery": false,
+  "gallery_urls": [
+    "https://external-preview.redd.it/pqaekDj1ce6g5YV2UV19MiCAOJxux5rocGg86QH__4g.png?auto=webp&s=77ee8f1be7a25b6261dbbe8443aeeb459d969417"
+  ],
+  "over_18": false,
+  "spoiler": false,
+  "locked": false,
+  "stickied": false,
+  "distinguished": null,
+  "language_guess": null,
+  "text_tokens_est": 161
+}

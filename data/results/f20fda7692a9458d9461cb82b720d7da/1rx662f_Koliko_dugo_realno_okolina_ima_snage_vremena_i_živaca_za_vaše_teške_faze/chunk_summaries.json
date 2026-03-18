@@ -1,0 +1,48 @@
+[
+  {
+    "text": "Ovo je interesantna tema otkako ljudi reagiraju na krize ili teške situacije u životu drugih. Neke osobe imaju tendenciju da bježe od problema, dok druge osobe nude podršku i pomažu u rješavanju problema. Interesantno je kako se ljudi razlikuju u tome kako reagiraju na krize drugih.",
+    "_meta": {
+      "chunk_id": 0,
+      "comment_count": 50,
+      "token_estimate": 2439
+    }
+  },
+  {
+    "summary": "Ljudi su se slagali da podrška od bliskih ljudi može biti kratkotrajna i da je teško nositi krizu sama. Neke osobe su izrazile potrebu za podršku u krizama, a neke su sugerirale da bi bilo korisno imati skupinu podrške koja nije sastavljena od njihovih prijatelja.",
+    "main_topics": [
+      "podrška",
+      "kriza",
+      "bliski ljudi"
+    ],
+    "overall_sentiment": "neutral",
+    "opinions_for": [
+      "Podrška od bliskih ljudi može biti kratkotrajna i teško nositi krizu sama.",
+      "Bi bilo korisno imati skupinu podrške koja nije sastavljena od njihovih prijatelja."
+    ],
+    "opinions_against": [
+      "Većina ljudi obično ne zna pružiti podršku i nemaju osnovne socijalne vještine.",
+      "Neki su sugerirali da bi bilo bolje samo patiti u tišini nego uzeti podršku od drugih."
+    ],
+    "disputed_points": [
+      "Kako dugo podrška od bliskih ljudi treba trajati?",
+      "Je li bolje imati skupinu podrške koja nije sastavljena od njihovih prijatelja?"
+    ],
+    "misunderstandings_or_uncertain_claims": [
+      "Neki su izrazili potrebu za podršku u krizama, ali nisu jasno definirali šta bi trebalo biti uručeno."
+    ],
+    "notable_insights": [
+      "Podrška od bliskih ljudi može biti kratkotrajna i teško nositi krizu sama.",
+      "Bi bilo korisno imati skupinu podrške koja nije sastavljena od njihovih prijatelja."
+    ],
+    "tone_notes": [
+      "Neki komentari su bili humoristični i ironični, ali većina je bila ozbiljna.",
+      "Neke osobe su izrazile frustraciju i bespomoćnost u krizama."
+    ],
+    "reader_takeaway": "U krizama podrška od bliskih ljudi može biti kratkotrajna, a bi bilo korisno imati skupinu podrške koja nije sastavljena od njihovih prijatelja.",
+    "_meta": {
+      "chunk_id": 1,
+      "comment_count": 13,
+      "token_estimate": 201
+    }
+  }
+]

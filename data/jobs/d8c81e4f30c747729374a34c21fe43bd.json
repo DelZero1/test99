@@ -1,0 +1,15 @@
+{
+  "job_id": "d8c81e4f30c747729374a34c21fe43bd",
+  "reddit_url": "https://www.reddit.com/r/askCroatians/comments/1rx71v4/imate_li_neke_cudne_navike_koje_radite/",
+  "chat_id": 928256490,
+  "requested_by_user_id": 928256490,
+  "status": "failed",
+  "created_at": "2026-03-18T15:50:23.495864+00:00",
+  "updated_at": "2026-03-18T15:50:25.727797+00:00",
+  "result_dir": "C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\d8c81e4f30c747729374a34c21fe43bd",
+  "error_message": "Pipeline nije uspio. stderr: Traceback (most recent call last):\n  File \"C:\\Users\\krist\\Desktop\\crawl\\reddit_ollama_summarizer.py\", line 14, in <module>\n    import requests\nModuleNotFoundError: No module named 'requests'; stdout: -",
+  "title": null,
+  "tldr_text": null,
+  "attempts": 1,
+  "metadata": {}
+}

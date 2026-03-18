@@ -1,0 +1,15 @@
+{
+  "job_id": "cdac4d0850414e8dac776cb3b1c197b7",
+  "reddit_url": "https://www.reddit.com/r/askCroatians/comments/1rx71v4/imate_li_neke_cudne_navike_koje_radite/",
+  "chat_id": 928256490,
+  "requested_by_user_id": 928256490,
+  "status": "failed",
+  "created_at": "2026-03-18T15:56:04.893683+00:00",
+  "updated_at": "2026-03-18T15:56:07.280326+00:00",
+  "result_dir": "C:\\Users\\krist\\Desktop\\mrx\\test99\\data\\results\\cdac4d0850414e8dac776cb3b1c197b7",
+  "error_message": "Pipeline nije uspio. stderr: Traceback (most recent call last):\n  File \"C:\\Users\\krist\\Desktop\\mrx\\test99\\reddit_ollama_summarizer.py\", line 857, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"C:\\Users\\krist\\Desktop\\mrx\\test99\\reddit_ollama_summarizer.py\", line 696, in main\n    ensure_dir(out_dir)\n  File \"C:\\Users\\krist\\Desktop\\mrx\\test99\\reddit_ollama_summarizer.py\", line 26, in ensure_dir\n    path.mkdir(parents=True, exist_ok=True)\n  File \"C:\\Users\\krist\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py\", line 1311, in mkdir\n    os.mkdir(self, mode)\nOSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: \"'C:\\\\Users\\\\krist\\\\Desktop\\\\mrx\\\\test99\\\\data\\\\results\\\\cdac4d0850414e8dac776cb3b1c197b7'\"; stdout: -",
+  "title": null,
+  "tldr_text": null,
+  "attempts": 1,
+  "metadata": {}
+}
